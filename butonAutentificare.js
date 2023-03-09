@@ -5,9 +5,14 @@ function ButonAutentificare({ navigation }) {
 
   return (
     <View>
+        <View>
       <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate('Autentificare')}}>
 	<Text style={{ color: 'black' }}>Nu aveti inca un cont?Inregistrati-va acum!</Text>
       </TouchableOpacity>
+    </View>
+
+    
+
     </View>
   );
 }

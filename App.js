@@ -2,6 +2,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Autentificare from './Autentificare';
 import { TouchableOpacity ,Text ,StyleSheet, Image, TextInput, View } from 'react-native';
+import Anunt from './Anunt';
+import Cautare from './Cautare';
 
 const Stack = createStackNavigator();
 
@@ -22,10 +24,10 @@ function App({ navigation }) {
 <TextInput style={styles.stilentry}  value="Introduceti Parola">
 </TextInput>
 
-<TextInput style={styles.stilentryuser}  value="Introduceti Numele">
+<TextInput style={styles.stilentryuser} value="Introduceti Numele">
 </TextInput>
 <Image fadeDuration={2000} style={styles.imagine} resizeMode="cover" source={require('C:/Users/Lenovo/Desktop/Licenta/1.png')}></Image> 
-<TouchableOpacity style={styles.butonlogin} onPress={()=>{}}>
+<TouchableOpacity style={styles.butonlogin} onPress={()=>navigation.navigate('Cautare')}>
 	<Text style={{color:'white'}}>Logare! </Text>
 </TouchableOpacity>
 
@@ -41,12 +43,17 @@ function App({ navigation }) {
 
 function AppContainer() {
   return (
+	
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="App" component={App} />
+		<Stack.Screen name="Cautare" component={Cautare} />
+		<Stack.Screen name="Anunt" component={Anunt} />
+	
         <Stack.Screen name="Autentificare" component={Autentificare} />
       </Stack.Navigator>
     </NavigationContainer>
+	
   );
 }
 
@@ -101,6 +108,13 @@ const styles = StyleSheet.create({
 		  justifyContent: 'center',
 		  borderRadius: 50,
 		  textAlign: 'center',
+		  borderRadius: 50,
+			shadowColor: 'black',
+			shadowOffset: { width: 2, height: 2 },
+			shadowOpacity: 0.5,
+			shadowRadius: 60,
+			elevation: 10,
+			opacity: 5.8,
   
 	  },
   
@@ -118,7 +132,13 @@ const styles = StyleSheet.create({
 		  width:350,
 		  textAlign: 'center',
 			borderRadius: 50,
-		 
+			shadowColor: 'black',
+			shadowOffset: { width: 2, height: 2 },
+			shadowOpacity: 0.5,
+			shadowRadius: 60,
+			elevation: 10,
+			opacity: 5.8,
+		
   
 	 },
   
